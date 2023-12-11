@@ -113,3 +113,106 @@
     console.log(this);*/
 
 //Chapter 3 - Improving Readability with Arrow Functions - END
+
+//Chapter 4 - Changing Function Context and Built-in Functions - START
+
+    //Understanding Function Context
+    /*function sayHi(){
+        console.log('Hi');
+        console.log(this);
+    }
+    sayHi(); //Hi
+             // Window {...}*/
+
+    /*let greeting = {};
+    greeting.sayHi = function(){
+        console.log('Hi');
+        console.log(this);
+    }
+    greeting.sayHi(); //Hi
+                      //{sayHi:f}*/
+
+    /*function sayHi(){
+        console.log('Hi');
+        console.log(this);
+    }                     
+    let greeting = new sayHi(); //Hi
+                                //[obj Object] */
+
+    //What is the call Method?
+    /*let person1 = {name: 'John', age:22 };                                
+    let person2 = {name: 'Mary', age:19 };
+    
+    let sayHi = function(){
+        console.log('Hi, ' + this.name);
+    }
+    sayHi();
+    person1.call();
+    sayHi.call(person1);
+    sayHi.call(person2);*/
+
+    //What is the apply Method?
+    /*function introduction(name, profession){
+        console.log("My name is " + name + " and I am a " + profession + ".");
+    }
+
+    introduction("John", "student");
+
+    introduction.apply(undefined, ["Mary", "Lawyer"]);
+    introduction.call(undefined, "Jon", "Pianist");*/
+    //Notes:
+    //Use apply() when we have array input with similar elements.
+    //Use call() when we have individual arguments of varying type.
+
+    //What is the bind Method?
+    /*let person1 = {
+        name: 'Mary',
+        getName: function(){
+            return this.name;
+        },
+        getPrintStatement: function(){
+            return "Hey from getPrintStatement";
+        }
+    };
+
+    let person2 = {
+        name: 'John'
+    };
+
+    let getNameCopy = person1.getName.bind(person2);
+    let getPrintStatementCopy = person1.getPrintStatement.bind(person2);
+
+    console.log(getNameCopy);
+    console.log(getNameCopy());
+    console.log(getPrintStatementCopy);
+    console.log(getPrintStatementCopy());*/
+
+    //Using Built-in Functions
+    //eval(): Accepts the string as input, a valued set and returns a value.
+    /*let x = 1; 
+    let y = 2;
+    console.log(eval('x + y + 1'));//4
+
+    let s = 'abc';
+    console.log(eval('x + y + s')); //3abc*/
+
+    //parseInt(): parses a string and returns an integer
+    /*console.log(parseInt('F', 16)); //15
+    console.log(parseInt('15', 10)); //15
+    console.log(parseInt('Hi', 16)); //15*/
+
+    //parseFloat(): parses a string and returns an floating point number
+    /*console.log(parseFloat('3.99')); //3.99
+    console.log(parseFloat('3.99e-1')); //3.99
+    console.log(parseFloat('')); //3.99*/
+
+    //escape(): escape returns the hexadecimal encoding of an arugument in the isolated one character set.
+    /*console.log(escape('text')); // text
+    console.log(escape(' '));    // %20
+    console.log(escape('abc&%'));//abc%26%25 */
+
+    //unescape(): does the opposite of escape. Returns the string for the ascii value.
+    /*console.log(unescape('text')); //text
+    console.log(unescape('%20')); // 
+    console.log(unescape('abc%26%25')); //abc&%  */
+//Chapter 4 - Changing Function Context and Built-in Functions - END
