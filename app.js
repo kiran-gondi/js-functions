@@ -216,3 +216,71 @@
     console.log(unescape('%20')); // 
     console.log(unescape('abc%26%25')); //abc&%  */
 //Chapter 4 - Changing Function Context and Built-in Functions - END
+
+//Chapter 5 - Constructing Rest Parameters and the Spread Operator - START
+
+    //What are Default Parameters?
+    //Default Parameters allows you to give a default parameter to a function.
+    /*function sayHi(name='World'){
+        console.log('Hello ' + name);
+    }
+    sayHi();
+    sayHi('John');
+    console.log('----------------------------------');*/
+    /*function sayHi(message, name = 'World'){
+        console.log(message + " " + name);
+    }
+    sayHi("Hello");
+    sayHi("Hi", "John");
+    console.log('----------------------------------');*/
+    //Therefore, Always declare the defalut parameters only after the regular parameters declartion is done.
+    /*function sayHi(name = 'World', message){
+        console.log(message + " " + name);
+    }
+    sayHi("Hello");
+    sayHi("Hi", "John");*/
+
+    //Constructing Rest Parameters
+    //Can define a function to store multiple arguments in a single array.
+    //Specially useful when we are invoking a function with multiple arguments.
+    //It always stores the rest or remaining arguments as an array.Hence it gets this name.
+    /*function greet(message, ...names){
+        console.log(message + ' everyone');
+        names.forEach(name => console.log('Hi ' + name));
+    }
+
+    greet('Welcome', 'Mary', 'Bob', 'Martin');*/
+
+    /*function greet(...names){
+        names.forEach(name => console.log('Hi ' + name));
+    }
+
+    greet('Welcome', 'Mary', 'Bob', 'Martin');*/
+
+    /*function greet(...names, message){
+        console.log(message + ' everyone');
+        names.forEach(name => console.log('Hi ' + name));
+    }
+
+    greet('Welcome', 'Mary', 'Bob', 'Martin');*/
+
+    //Using the Spread Operator
+    //A Spread Parameter is the opposite of how the Rest Paramete work.
+    //It allows a function to take an array as an argument and then spread out 
+    //its elements so that they can be assigned to individual parameters.
+    /*function display(char1, char2, char3, char4){
+        console.log(char1, char2, char3, char4);
+    }
+    let letters = 'abcd';
+    display(...letters);
+    let lettersAdditonal = 'abcdefg';
+    display(...lettersAdditonal);*/
+
+    /*function display(char1, char2, char3, char4, ...others){
+        console.log(others);
+        console.log(char1, char2, char3, char4);
+    }
+    let lettersAdditonal = 'abcdefg';
+    display(...lettersAdditonal);*/
+
+//Chapter 5 - Constructing Rest Parameters and the Spread Operator - END
