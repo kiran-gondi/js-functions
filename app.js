@@ -81,8 +81,35 @@
     console.log(counter1()); //1
     let counter2 = setupCounter(10);
     console.log(counter2()); //10*/
-
-    
-
-
 //Chapter 2 - Writing Modular Code with Functions - END
+
+//Chapter 3 - Improving Readability with Arrow Functions - START
+    //Demo of Arrow Functions
+    /*function sum(num1, num2){
+        return num1 + num2;
+    }
+    let output = sum(10, 20);
+    console.log(output);
+
+    let sumArrow = (num1, num2) => num1 + num2;
+    let outputFromArrow = sumArrow(10, 1);
+    console.log(outputFromArrow);*/
+
+    /*this = refers to the owner of the function we are executing.
+    Unlike regular functions arrow functions do not have their own 
+    this value. Morever, the value of this is always inherited 
+    from the enclosing scope.*/
+    /*let message = {
+        name:  'John',
+        regularFunction: function(){
+            console.log(this);
+            console.log('Hello ' + this.name);
+        },
+        arrowFunction: ()=> console.log('Hi ' + this.name)
+    };
+
+    message.regularFunction();
+    message.arrowFunction();
+    console.log(this);*/
+
+//Chapter 3 - Improving Readability with Arrow Functions - END
